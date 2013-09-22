@@ -1,0 +1,38 @@
+application: angularjsfantasyfootball
+version: 1
+runtime: python27
+api_version: 1
+threadsafe: yes
+
+handlers:
+- url: /favicon\.ico
+  static_files: public/img/icons/favicon.ico
+  upload: public/img/icons/favicon\.ico
+
+- url: /robots.txt
+  static_files: public/robots.txt
+  upload: public/robots.txt
+
+- url: /css
+  static_dir: public/css
+
+- url: /img
+  static_dir: public/img
+
+- url: /js
+  static_dir: public/js
+
+- url: /lib
+  static_dir: public/lib
+
+- url: /views
+  static_dir: public/views
+
+- url: .*
+  script: main.app
+
+libraries:
+- name: webapp2
+  version: latest
+- name: jinja2
+  version: latest

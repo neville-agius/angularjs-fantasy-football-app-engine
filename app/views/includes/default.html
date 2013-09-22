@@ -1,0 +1,12 @@
+<!DOCTYPE html><html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="https://www.facebook.com/2008/fbml" itemscope="itemscope" itemtype="http://schema.org/Product">
+	{% include 'app/views/includes/head.html' %}
+	<body>
+		<header data-ng-include="'views/header.html'" class="navbar navbar-fixed-top navbar-inverse"></header>
+		<section class="content">
+			<section class="container">
+				{% block content %}{% endblock %}
+			</section>
+		</section>
+		{% include 'app/views/includes/foot.html' %}
+	</body>
+
