@@ -53,5 +53,6 @@ app = webapp2.WSGIApplication([
     ('/', MainHandler),
     ('/signout', SignoutHandler),
     ('/signin', SigninHandler),
-    ('/leagues', LeagueHandler.LeaguesListHandler)
+    ('/leagues', LeagueHandler.LeaguesListHandler),
+    ('/leagues/(.+)', LeagueHandler.LeagueHandler)
 ], debug=True)

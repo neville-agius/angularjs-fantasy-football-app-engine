@@ -30,6 +30,17 @@ class LeaguesListHandler(webapp2.RequestHandler):
 		else:
 			self.redirect('/')
 
+class LeagueHandler(webapp2.RequestHandler):
+	def get(self, leagueid):
+		user = users.get_current_user()
+		if user:
+			leagueKey = ndb.Key(urlsafe=leagueid)
+			league = leagueKey.get()
+			print "json=",json.dumps(league, cls=LeagueEncoder)
+			self.response.write(json.dumps(league, cls=LeagueEncoder))
+		else:
+			self.redirect('/')
+
 
 
 	

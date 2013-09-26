@@ -8,5 +8,5 @@ class League(ndb.Model):
 
 class LeagueEncoder(json.JSONEncoder):
     def default(self, obj):
-    	objDictionary = {"commissioner": obj.commissioner.email(), "name": obj.name }
+    	objDictionary = {"commissioner": obj.commissioner.email(), "name": obj.name, "_id": obj.key.urlsafe() }
         return objDictionary
